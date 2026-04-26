@@ -31,8 +31,7 @@ The system implements a production-ready containerized service:
     ```bash
     terraform init
     terraform apply -auto-approve
-    
-```
+    ```
 
 ## Verification & Testing
 
@@ -44,22 +43,19 @@ To observe the container operations:
     aws ecs describe-clusters --clusters sysops-fargate-cluster
     awslocal ecs describe-services --cluster sysops-fargate-cluster --services sysops-web-service
     aws ecs describe-services --cluster sysops-fargate-cluster --services sysops-web-service
-    
-```
+    ```
 
 2.  **Check Running Tasks:**
     ```bash
     awslocal ecs list-tasks --cluster sysops-fargate-cluster
     aws ecs list-tasks --cluster sysops-fargate-cluster
-    
-```
+    ```
 
 3.  **Inspect Scaling Policies:**
     ```bash
     awslocal application-autoscaling describe-scaling-policies --service-namespace ecs
     aws application-autoscaling describe-scaling-policies --service-namespace ecs
-    
-```
+    ```
 
 4.  **Confirm Container Insights:**
     In a real environment, you would navigate to the CloudWatch Console to view the "Container Insights" dashboard for automated performance metrics.
